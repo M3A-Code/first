@@ -3,11 +3,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 
+import { createBrowserRouter , RouterProvider } from 'react-router-dom';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+const pages = createBrowserRouter([{
+  path : '/',
+  element : <App/>, 
+  errorElement : <h1>Sorry....</h1>
+}])
+
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={pages} />
   </React.StrictMode>
 );
+
 
